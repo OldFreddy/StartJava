@@ -1,8 +1,17 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	    System.out.println("Hello World!");
+        Scanner num = new Scanner(System.in);
+        int first, second, result;
+        System.out.println("Enter first num: ");
+        first = num.nextInt();
+        System.out.println("Enter second num");
+        second = num.nextInt();
+        result = first + second;
+        System.out.println("Result is: " + result);
     }
 }
