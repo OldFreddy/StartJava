@@ -22,5 +22,18 @@ public class Main {
         else {
             System.out.print("Num is lower than " + second);
         }
+
+        switch (first){
+            case 51:
+                System.out.print("Num is equal 51");
+                break;
+            case 48:
+                System.out.print("\n Num is equal 48");
+                break;
+            default:
+                System.out.print("Num is equal something");
+
+
+        }
     }
 }
