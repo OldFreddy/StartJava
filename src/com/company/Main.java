@@ -1,11 +1,16 @@
 package com.company;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
+
 
 public class Main {
 
     public static void main(String[] args) {
+
         int[] array = {12, 10, 1, 5, 17, 15, 13, 4, 6, 2, 8, 3, 16, 7, 19, 46, 87,  24, 51};
+
         int temp = 0;
         boolean finish = false;
         Scanner scan = new Scanner(System.in);
@@ -24,8 +29,9 @@ public class Main {
             }
             printArray(array);
         }
-
-        binnarySearch(array, 10 );
+        System.out.println("\n Введите искомое число ");
+        int searchingElement = scan.nextInt();
+        binnarySearch(array, searchingElement );
 
 
 
@@ -38,28 +44,37 @@ public class Main {
     }
 
     public static void binnarySearch(int[] arr, int elementToSearch) {
-
+        int count = 0;
         int lowElement = 0;
         int highElement = arr.length - 1;
         int middleElement;
+        boolean isElementSearch = false;
 
         while(lowElement <= highElement){
             middleElement = (lowElement + highElement) / 2;
 
             if (arr[middleElement] == elementToSearch){
                 System.out.println("\n Элемент " + elementToSearch +" найден под индексом " + middleElement );
+                isElementSearch = true;
                 break;
             }
             else if (arr[middleElement] > elementToSearch){
-                highElement = middleElement;
+                highElement = middleElement - 1;
+                count++;
 
             }
-            else {
-                lowElement = middleElement;
+            else if (arr[middleElement] < elementToSearch) {
+                lowElement = middleElement + 1;
+                count++;
             }
+
 
 
         }
+        if (isElementSearch !=true) {
+            System.out.println("Такого элемента не существует в массиве");
+        }
+        System.out.println("Количество проходов " + count);
 
 
     }
