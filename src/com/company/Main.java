@@ -1,39 +1,14 @@
 package com.company;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner num = new Scanner(System.in);
-        int first, second = 50;
-        boolean isTrue = true;
-        System.out.println("Enter first num: ");
-        first = num.nextInt();
-
-        isTrue = first == 51? true : false; // Если first = 51, то isTrue = first
-
-        if (first >= second && isTrue) {
-            System.out.print("Num is 10");
-            System.out.print("\n");
-        } else if (first == 45) {
-            System.out.print("Num is equal 45");
-        }
-        else {
-            System.out.print("Num is lower than " + second);
-        }
-
-        switch (first){
-            case 51:
-                System.out.print("Num is equal 51");
-                break;
-            case 48:
-                System.out.print("\n Num is equal 48");
-                break;
-            default:
-                System.out.print("Num is equal something");
-
-
-        }
+        char[][] array = {{1,2,3,6},{4,5,6},{7,8,9}};
+        array[0][0] = 'C';
+        System.out.println(array[2].length);
+        System.out.println(array[0][0]);
     }
 }
