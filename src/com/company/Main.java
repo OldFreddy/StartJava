@@ -3,40 +3,30 @@ package com.company;
 import java.awt.*;
 import java.util.Scanner;
 
-
 public class Main {
 
     public static void main(String[] args) {
-      int temp = func (4 , 2);
-      System.out.print(temp);
-      int[] arr = readArray();
-      for (int i = 0; i<arr.length; i++){
-          System.out.print(arr[i] + " " );
-      }
-
-
-    }
-    public static int[] readArray(){
-        int[] arr;
-        int n;
+        int [][] array;
         Scanner scan = new Scanner(System.in);
-        n = scan.nextInt();
-        arr = new int[n];
-        for (int i = 0; i < arr.length; i++){
-            arr[i] = scan.nextInt();
+        System.out.println("Введите количество строк в массиве \n");
+        int n = scan.nextInt();
+        System.out.println("Введите количество столбцов в массиве \n");
+        int m = scan.nextInt();
+        array = new int[n][m];
 
+        for (int i = 0; i < array.length; i++){
+            for (int j = 0; j < array[i].length; j++){
+                System.out.println("Введите [" + i + "][" + j + "] элемент" );
+                array[i][j] = scan.nextInt();
+            }
         }
-        return arr;
+
+        for (int i = 0; i < array.length; i++){
+            System.out.println();
+            for (int j = 0; j < array[i].length; j++){
+                System.out.print(array[i][j] + " | ");
+            }
+        }
 
     }
-
-    public static int func(int a, int b) {
-        int result = 1;
-        for (int i = 0; i < b; i++){
-            result *= a;
-        }
-        return result;
-    }
-
-
 }
