@@ -7,6 +7,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+        Cat bars = new Cat();
+        bars.Jump();
+        bars.SayMeow();
+
         Artifact art1 = new Artifact(1);
         Artifact art2 = new Artifact(1, "ылв");
         Artifact art3 = new Artifact(1, "ыраывп", 12);
