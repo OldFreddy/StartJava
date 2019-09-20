@@ -6,51 +6,46 @@ import java.util.Scanner;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
-
-        int volume = 0; //создаем переменную для вычисления объема коробки
-        Box catBox = new Box(); //создаем экземпляр класса с именем catBox
-        Box smallBox = new Box(); //создаем еще один экземпляр класса
-        Box bigBox = new Box(); //создаем еще один экземпляр класса
-
-        catBox.width = 10;  //присваиваем значение переменной экземпляра
-        catBox.height = 15; //присваиваем значение переменной экземпляра
-        catBox.depth = 20; //присваиваем значение переменной экземпляра
-        boxV(catBox.width, catBox.height, catBox.depth, "catBox" );
+        Artifact art1 = new Artifact(1);
+        Artifact art2 = new Artifact(1, "ылв");
+        Artifact art3 = new Artifact(1, "ыраывп", 12);
 
 
-        smallBox.width = 5;
-        smallBox.height = 10;
-        smallBox.depth = 10;
-        boxV(smallBox.width, smallBox.height, smallBox.depth, "smallBox");
+        System.out.print(art2.culture);
+        System.out.print(art2.number);
 
-        bigBox.width = 15;
-        bigBox.height = 20;
-        bigBox.depth = 30;
-        boxV(bigBox.width, bigBox.height, bigBox.depth, "bigBox");
+    }
 
+    public static class Artifact {
 
-        volume = catBox.width * catBox.height * catBox.depth; //вычисляем объем коробки
+        int number;
+        String culture;
+        int century;
 
-
-
-        //System.out.println("Объем коробки для кота = " + volume);
+        public Artifact(int number, String culture, int century){
+            this.number = number;
+            this.culture = culture;
+            this.century = century;
 
         }
-    public static void boxV (int width, int height, int depth, String box )
-    {
-        int V_Box = (width * height * depth);
-        if (box == "smallBox" ){
-            System.out.println("Объем маленькой коробки = " + V_Box);
+
+        public Artifact(int number, String culture){
+            this.number = number;
+            this.culture = culture;
         }
-        else if (box == "catBox"){
-            System.out.println("Объем котячьей коробки = " + V_Box);
+
+        public Artifact (int number){
+            this.number = number;
         }
-        else {
-            System.out.println("Объем большой коробки = " + V_Box);
-        }
+
+
+
+
+
+
+
+
     }
 
 
